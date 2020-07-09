@@ -21,15 +21,7 @@ export class RegisterComponent implements OnInit {
 
     ) {
       this.title = 'register';
-      this.user = new UserModel(
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        'ROLE_USER',
-        '');
+      this.user = new UserModel('', '', '', '', '', '', 'ROLE_USER', '');
     }
 
   ngOnInit(): void {
