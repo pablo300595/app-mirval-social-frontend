@@ -1,6 +1,7 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UserService } from './common-services/db-requests/user/user.service';
+import { GLOBAL_CONFIG } from './configurations/global.config';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,13 @@ import { UserService } from './common-services/db-requests/user/user.service';
 export class AppComponent implements OnInit, DoCheck {
   public title: string;
   public identity;
+  public url;
 
   constructor(
     private userService: UserService,
     private router: Router
   ) {
-
+    this.url = GLOBAL_CONFIG.url;
   }
 
   ngOnInit() {

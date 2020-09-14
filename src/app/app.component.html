@@ -18,8 +18,14 @@
                         Timeline
                     </a>
                 </li>
+                <li *ngIf="identity">
+                    <a [routerLink]="['/people']" [routerLinkActive]="['active']">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Gente
+                    </a>
+                </li>
                 <li class="avatar" *ngIf="identity">
-                    <!--Cargar imagen de usuario-->
+                    <img src="{{ url + 'get-image-user/' + identity.image }}" *ngIf="identity && identity.image">
                 </li>
                 <li class="dropdown" *ngIf="identity">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -62,4 +68,5 @@
         </div>
     </nav>
 </section>
+
 <router-outlet></router-outlet>

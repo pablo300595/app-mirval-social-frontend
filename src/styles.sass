@@ -1,10 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+body
+    margin: 0
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: 100%
+
 .h1-strong
     font-size: 35px
     font-weight: bold
     margin-left: 13px
     margin-bottom: 20px
-    padding-bottom: 15pxnavbar-nav
+    padding-bottom: 15px
     border-bottom: 1px solid #eee
 
 .jumbotron
@@ -18,9 +25,40 @@
 .active
     border-bottom: 3px solid yellow
 
+.avatar-default
+    width: 100% !important
+
+.item-user
+    .image-user
+        width: 75px
+        height: 75px
+        border-radius: 100px
+        overflow: hidden
+        margin-right: 15px
+        img
+            width: 120px
+    .user-name
+        margin-top: 10px
+        .nickname
+            color: #969393
+        .name-surname
+            a
+                color: #555555
+                font-weight: bold
+
 .navigation
     margin: 0px
     padding: 0px !important
+    .avatar
+        width: 35px
+        height: 35px
+        border-radius: 100px
+        overflow: hidden
+        margin-top: 9px
+        margin-right: 2px
+        img
+            height: auto
+            width: 45px
     .navbar
         border-radius: 0px !important
         background: #e53c37 !important
