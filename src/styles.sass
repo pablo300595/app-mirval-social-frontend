@@ -9,7 +9,7 @@ body
 .h1-strong
     font-size: 35px
     font-weight: bold
-    margin-left: 13px
+    /*margin-left: 13px*/
     margin-bottom: 20px
     padding-bottom: 15px
     border-bottom: 1px solid #eee
@@ -76,3 +76,64 @@ body
 .navbar-default 
     .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover
         background: #cc1717 !important
+
+/* SIDEBAR */
+.sidebar-32
+    width: 32% !important
+    padding: 0px !important
+
+#new-post
+    padding: 18px
+    padding-left: 10px 
+    width: 32%
+
+
+#user-card 
+    padding: 25px
+    width: 32%
+    .avatar
+        width: 75px
+        height: 75px
+        border-radius: 100px
+        overflow: hidden
+        margin-right: 15px
+        img
+            width: 100%
+    .name-surname
+       font-weight: 500
+       font-size: 17px
+       .nickname
+           color: #969393
+       a
+           color: #555555
+    .label-stats, .number-stats
+        display: block
+        text-align: center
+        transition: all 300ms
+    .label-stats
+        font-weight: bold
+        color: #555
+    .number-stats
+        font-weight: bold
+        color: green   
+    .following-data
+        float: left
+        padding-right: 18px
+        padding-left: 18px
+        padding-top: 10px
+        border-right: 2px solid #eeeeee
+    .following-data:last-child
+        border: none 
+    .following-data:first-child
+        padding-left: 6px
+    .stats
+        border-top: 1px solid #eeeeee
+        margin-top: 10px
+        a
+            text-decoration: none
+        a:hover
+            .number-stats
+                color: #cc1717
+
+#posts
+    min-height: 500px     

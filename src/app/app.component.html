@@ -13,7 +13,7 @@
                     </a>
                 </li>
                 <li *ngIf="identity">
-                    <a href="#">
+                    <a [routerLink]="['/timeline']" [routerLinkActive]="['active']">
                         <span class="glyphicon glyphicon-th-list"></span>
                         Timeline
                     </a>
