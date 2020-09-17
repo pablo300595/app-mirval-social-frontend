@@ -25,4 +25,18 @@ export class PostService {
       .set('Authorization', token);
     return this.http.post(`${this.url}post`, params, {headers: headers});
   }
+
+  getPosts(token, page = 1): Observable<any> {
+    let headers = new HttpHeaders()
+      .set('Content-type', 'application/json')
+      .set('Authorization', token);
+    return this.http.get(`${this.url}posts/${page}`, {headers: headers});
+  }
+
+  deletePost(token, id): Observable<any> {
+    let headers = new HttpHeaders()
+      .set('Content-type', 'application/json')
+      .set('Authorization', token);
+    return this.http.delete(`${this.url}post/${id}`, {headers: headers});
+  }
 }

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from './../../common-services/db-requests/user/user.service';
-import { PostService } from './../../common-services/db-requests/post/post.service';
-import { GLOBAL_CONFIG } from './../../configurations/global.config';
-import { PostModel } from './../../models/post.model';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { UserService } from './../../../common-services/db-requests/user/user.service';
+import { PostService } from './../../../common-services/db-requests/post/post.service';
+import { GLOBAL_CONFIG } from './../../../configurations/global.config';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import { PostModel } from './../../../models/post.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -17,11 +18,18 @@ export class SidebarComponent implements OnInit {
   public url;
   public status;
   public post: PostModel;
+  //Output
+  @Output() sent = new EventEmitter(); 
 
-  constructor(private userService: UserService, private postService: PostService) {
+  constructor(private userService: UserService, private postService: PostService, 
+    private route: ActivatedRoute, 
+    private router: Router) {
     this.identity = this.userService.getIdendity();
     this.token = this.userService.getToken();
     this.stats = this.userService.getAnalyticsBySession();
+    console.log('this.stats: ------------------------------------');
+    console.log(this.stats);
+    console.log('this.stats: ------------------------------------');
     this.url = GLOBAL_CONFIG.url;
     this.post = new PostModel('', '', '', '', this.identity._id);
   }
@@ -35,6 +43,7 @@ export class SidebarComponent implements OnInit {
         // this.post = res.post;
         this.status = 'success';
         form.reset();
+        this.router.navigate(['/timeline']);
       } else {
         this.status = 'error';
       }
@@ -44,6 +53,10 @@ export class SidebarComponent implements OnInit {
         this.status = 'error';
       }
     });
+  }
+
+  sendPost(event) {
+    this.sent.emit({sent: true});
   }
 
 }

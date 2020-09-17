@@ -61,7 +61,7 @@
     <div class="alert alert-danger" *ngIf="status=='error'">
         Error, Publicación no enviada correctamente
     </div>
-    <form #newPostForm="ngForm" (ngSubmit)="onSubmit(newPostForm)" class="col-lg-10">
+    <form #newPostForm="ngForm" (ngSubmit)="onSubmit(newPostForm); sendPost($event);" class="col-lg-10">
         <p>
             <label>¿Qué estás pensando hoy?</label>
             <textarea name="text" #text="ngModel" [(ngModel)]="post.text" class="form-control" required></textarea>

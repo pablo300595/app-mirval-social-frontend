@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MomentModule } from 'angular2-moment';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -11,8 +12,9 @@ import { HomeComponent } from './components/home/home.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { HeaderComponent } from './components/common-components/header/header.component';
 import { UsersComponent } from './components/users/users.component';
-import { SidebarComponent } from './common-components/sidebar/sidebar.component';
+import { SidebarComponent } from './components/common-components/sidebar/sidebar.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
+import { PostsComponent } from './components/common-components/posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +26,15 @@ import { TimelineComponent } from './components/timeline/timeline.component';
     HeaderComponent,
     UsersComponent,
     SidebarComponent,
-    TimelineComponent
+    TimelineComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MomentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
