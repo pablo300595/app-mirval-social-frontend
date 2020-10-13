@@ -15,6 +15,8 @@ import { UsersComponent } from './components/users/users.component';
 import { SidebarComponent } from './components/common-components/sidebar/sidebar.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { PostsComponent } from './components/common-components/posts/posts.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ChallengeComponent } from './components/challenge/challenge.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { PostsComponent } from './components/common-components/posts/posts.compo
     UsersComponent,
     SidebarComponent,
     TimelineComponent,
-    PostsComponent
+    PostsComponent,
+    ProfileComponent,
+    ChallengeComponent
   ],
   imports: [
     BrowserModule,
